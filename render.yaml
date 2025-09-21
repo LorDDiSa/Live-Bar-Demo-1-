@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: livebar-almaty
+    env: docker
+    plan: starter
+    autoDeploy: true
+    healthCheckPath: /api/health
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: DB_PATH
+        value: db.sqlite3
+      - key: ALLOWED_ORIGINS
+        value: "*"
